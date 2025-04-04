@@ -24,6 +24,7 @@ pipeline {
                 pytest
                 '''
             }
+            
         }        
         stage('Deploy') {
             steps {
