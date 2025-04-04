@@ -12,22 +12,14 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh '''#!/bin/bash
-                echo 'Test Step: Running pytest in the mlip environment'
+                bat '''
+                echo Test Step: Activating virtual environment and running pytest
 
-                # Initialize Conda (only needed if it's not already initialized)
-                source ~/miniconda3/etc/profile.d/conda.sh
-                
-                # Activate the mlip environment
-                conda activate mlip
-                
-                # Run pytest
+                call mlip\\Scripts\\activate.bat
                 pytest
-                
-                # Remove exit 1 to allow pipeline to continue
                 '''
             }
-        }
+        }        
         stage('Deploy') {
             steps {
                 echo 'In this step, we deploy our porject'
