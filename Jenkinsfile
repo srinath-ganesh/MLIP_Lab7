@@ -15,7 +15,7 @@ pipeline {
                 bat '''
                 echo Test Step: Activating virtual environment and running pytest
 
-                call F:\\UIC\\Semester 2\\Responsible AI Engineering\\Labs\\Lab 7\\mlip\\Scripts\\activate
+                call "F:\\UIC\\Semester 2\\Responsible AI Engineering\\Labs\\Lab 7\\mlip\\Scripts\\activate"
                 pytest
                 '''
             }
