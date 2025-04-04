@@ -10,6 +10,7 @@ pipeline {
                 '''
             }
         }
+
         stage('Test') {
             steps {
                 bat '''
@@ -24,8 +25,8 @@ pipeline {
                 pytest
                 '''
             }
-            
-        }        
+        }
+
         stage('Deploy') {
             steps {
                 bat '''
