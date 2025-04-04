@@ -13,9 +13,14 @@ pipeline {
         stage('Test') {
             steps {
                 bat '''
-                echo Test Step: Activating virtual environment and running pytest
+                echo Creating virtual environment
+                python -m venv mlip
 
-                call "F:\\UIC\\Semester 2\\Responsible AI Engineering\\Labs\\Lab 7\\mlip\\Scripts\\activate"
+                echo Activating virtual environment and installing dependencies
+                call mlip\\Scripts\\activate.bat
+                pip install pytest numpy pandas scikit-learn
+
+                echo Running tests
                 pytest
                 '''
             }
